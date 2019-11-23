@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/witz/io-bridge.svg?branch=master)](https://travis-ci.org/witz/io-bridge)
+
 # IO-Bridge
 
 This library is intended to simplify data access through different protocols.
