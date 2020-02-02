@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>net.witz.libs</groupId>
 		<artifactId>io-bridge-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.2</version>
 	</parent>
 	<artifactId>io-bridge-random</artifactId>
 	<name>IOB-Connector Random</name>
