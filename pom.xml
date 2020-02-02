@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.witz.libs</groupId>
 	<artifactId>io-bridge-parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>pom</packaging>
 	<name>IO Bridge parent project</name>
 
@@ -27,6 +27,14 @@
 		<module>io-bridge-open-weather-map</module>
 		<module>io-bridge-ws</module>
 	</modules>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/witz/io-bridge</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
