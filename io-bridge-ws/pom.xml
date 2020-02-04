@@ -3,17 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-        <groupId>net.witz.libs</groupId>
-        <artifactId>io-bridge-parent</artifactId>
-        <version>0.0.2</version>
-    </parent>
+		<groupId>net.witz.libs</groupId>
+		<artifactId>io-bridge-parent</artifactId>
+		<version>0.0.4</version>
+	</parent>
 	<artifactId>io-bridge-ws</artifactId>
+	<name>IO Bridge REST WS</name>
 	<description>Main component exposing REST API</description>
-
-	<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-	</properties>
 
 	<dependencies>
 		<dependency>
@@ -33,16 +29,25 @@
 		<dependency>
 			<groupId>net.witz.libs</groupId>
 			<artifactId>io-bridge-random</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>net.witz.libs</groupId>
 			<artifactId>io-bridge-open-weather-map</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.4</version>
 		</dependency>
-		<dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-        </dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<configuration>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
