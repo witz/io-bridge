@@ -12,10 +12,10 @@ package io.bridge.ws;
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -81,7 +81,7 @@ public class IOApp {
         // List all available sources
         app.get("/sources", ctx -> {
             boolean refresh = parseBoolean(ctx.queryParam(PARAM_REFRESH));
-            List<IOSource> sources = IOSourceManager.INSTANCE.getIOSources(refresh);
+            List<IOSource> sources = IOSourceManager.getIOSources(refresh);
             String response = sources.stream().map(IOSource::getName).collect(Collectors.toList()).toString();
             ctx.result(response);
         });
@@ -89,7 +89,7 @@ public class IOApp {
         // List a source supported protocols
         app.get("/:source/protocols", ctx -> {
             boolean refresh = parseBoolean(ctx.queryParam(PARAM_REFRESH));
-            Optional<IOSource> source = IOSourceManager.INSTANCE.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
+            Optional<IOSource> source = IOSourceManager.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
             if (!source.isPresent()) {
                 throw new NotFoundResponse(ERROR_SOURCE_NOT_FOUND);
             }
@@ -103,7 +103,7 @@ public class IOApp {
         // List a source supported properties
         app.get("/:source/:protocol/properties", ctx -> {
             boolean refresh = parseBoolean(ctx.queryParam(PARAM_REFRESH));
-            Optional<IOSource> source = IOSourceManager.INSTANCE.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
+            Optional<IOSource> source = IOSourceManager.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
             if (!source.isPresent()) {
                 throw new NotFoundResponse(ERROR_SOURCE_NOT_FOUND);
             }
@@ -128,7 +128,7 @@ public class IOApp {
         // List a property attributes
         app.get("/:source/:protocol/:property/attributes", ctx -> {
             boolean refresh = parseBoolean(ctx.queryParam(PARAM_REFRESH));
-            Optional<IOSource> source = IOSourceManager.INSTANCE.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
+            Optional<IOSource> source = IOSourceManager.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
             if (!source.isPresent()) {
                 throw new NotFoundResponse(ERROR_SOURCE_NOT_FOUND);
             }
@@ -165,7 +165,7 @@ public class IOApp {
 
             // 1. Get IO source
             boolean refresh = parseBoolean(ctx.queryParam(PARAM_REFRESH));
-            Optional<IOSource> source = IOSourceManager.INSTANCE.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
+            Optional<IOSource> source = IOSourceManager.getIOSource(ctx.pathParam(PARAM_SOURCE), refresh);
             if (!source.isPresent()) {
                 throw new NotFoundResponse(ERROR_SOURCE_NOT_FOUND);
             }
