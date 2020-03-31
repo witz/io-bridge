@@ -1,32 +1,30 @@
 package io.bridge.api;
 
-import org.apache.commons.lang3.StringUtils;
-
 import io.bridge.api.exceptions.InvalidAttributeException;
 
-public class NumericAttribute implements Attribute {
+public class NumAttribute implements Attribute {
 
-    private String value;
+    private Integer value;
 
     @Override
     public String getName() {
-        return "string";
+        return "number";
     }
 
     @Override
     public void setValue(String value) {
-        this.value = value;
+        this.value = Integer.parseInt(value);
     }
 
     @Override
     public String getValue() {
-        return value;
+        return Integer.toString(value);
     }
 
     @Override
     public void validate() throws InvalidAttributeException {
-        if (StringUtils.isBlank(value)) {
-            throw new InvalidAttributeException("Invalid string");
+        if (value != null) {
+            throw new InvalidAttributeException("Invalid number");
         }
     }
 

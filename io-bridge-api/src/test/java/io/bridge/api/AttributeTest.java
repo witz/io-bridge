@@ -53,7 +53,7 @@ public class AttributeTest {
 
     @Parameterized.Parameters
     public static Collection<Object[]> instancesToTest() {
-        return Arrays.asList(new Object[] { new StringAttribute() }, new Object[] { new NumericAttribute() });
+        return Arrays.asList(new Object[] { new NumAttribute() }, new Object[] { new StringAttribute() });
     }
 
 }
