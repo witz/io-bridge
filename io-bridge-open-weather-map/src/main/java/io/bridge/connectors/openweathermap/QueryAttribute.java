@@ -28,32 +28,21 @@ package io.bridge.connectors.openweathermap;
 
 import org.apache.commons.lang3.StringUtils;
 
-import io.bridge.api.Attribute;
 import io.bridge.api.exceptions.InvalidAttributeException;
+import io.bridge.api.impl.StringAttribute;
 
 /**
  *
  * @author Charaf-Eddine SAIDI
  *
  */
-public class QueryAttribute implements Attribute {
+public class QueryAttribute extends StringAttribute {
 
     public static final String NAME = "q";
-    private String value;
 
     @Override
     public String getName() {
         return NAME;
-    }
-
-    @Override
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
     }
 
     @Override
