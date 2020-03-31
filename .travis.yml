@@ -6,6 +6,9 @@ addons:
     token:
       secure: "ZZyJXyyLVhnW7Aat5l+FHRQj2nXeyD5ZNkrJeDTmOakH7qRDP3hFVtZuc5TVjJ9kn9zANyvGAu2ijebGASAhPcZBHBEllNdUmz1n/I8DiL0T1xcsjXLR+jlrhJiHMKvHuCDdRDXMaxwdu+QnkZOXPD38CuVrRSK4Q1BGVfO0g389ZOc+Lw2ekJvkVWPmH1Nxobb753acRwY+EIZvAv/QPmrov2j2OCWcQGmUPjKDyjhaAVLdFkZtXek365WlmTycqHK6q8ZBdq88Jvw1fSJJHxDAusmYfha4UwfJuwQfS+ndtFiPCseU6JGrRxoQd2nprUPpw/7z6+Tfz0qctJ1zmYZd2SFvrjBKcCnarxW/FYz4D1rD/PngDAJo924zrDUfidB8541mbXX/htdQLDMW2W+wI/vaeN/HjwPW1nv58ssQPIRCT4M3+BVW9weH+tu3OH9SPaVU/WCJTUQgtwdtCYiAVc9/Cj4BZ5SHSjIQXKm1h2tUwU+vBHxnMAVlvGtlQf8SpuFFnIIEo/ThQMalLAYz6hkJpk+Cgl5XgSt+DAxcLnUQMeV2AJ6WDRl9NBhj7B69vHFUPxrwRkZmqQTY/bmN7edHBECYWbI16Rwn0YbygTflYoD3gMIWwsC3rkjMH25RZxQziY/qC/mydq+qVjcasHJ8+vBBIJsk9uiWU80="
 
+jdk:
+  - openjdk8
+
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=witz_io-bridge
+  # JaCoCo is used to have code coverage, "-Pcoverage" activates the maven profile in the pom.xml
+  - mvn clean verify sonar:sonar -Pcoverage
