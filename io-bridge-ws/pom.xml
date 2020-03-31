@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>net.witz.libs</groupId>
 		<artifactId>io-bridge-parent</artifactId>
-		<version>0.0.4</version>
+		<version>0.0.5</version>
 	</parent>
 	<artifactId>io-bridge-ws</artifactId>
 	<name>IO Bridge REST WS</name>
@@ -29,12 +29,12 @@
 		<dependency>
 			<groupId>net.witz.libs</groupId>
 			<artifactId>io-bridge-random</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.5</version>
 		</dependency>
 		<dependency>
 			<groupId>net.witz.libs</groupId>
 			<artifactId>io-bridge-open-weather-map</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.5</version>
 		</dependency>
 	</dependencies>
 
