@@ -12,10 +12,10 @@ package io.bridge.api;
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -28,7 +28,7 @@ package io.bridge.api;
 
 /**
  *
- * *Internal* Interface to designate types having a Value.
+ * *Internal* Interface to designating types having a Value.
  *
  * @author Charaf-Eddine SAIDI
  *
@@ -37,25 +37,10 @@ interface IhasValue {
 
     /**
      *
-     * @param value
-     * @apiNote Implementers should parse the passed string to
-     *          {@link #setValue(String)} to set the value.
+     * @param value String representation of value
+     * @apiNote Implementers should parse the passed string to set the value.
      */
-    void parseValue(String value);
-
-    /**
-     *
-     * @param value
-     * @apiNote Implementers should parse the passed string to
-     *          {@link #setValue(String)} to set the value.
-     */
-    default void setValue(String value) {
-        try {
-            parseValue(value);
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Invalid attribute value: " + value);
-        }
-    }
+    void setValue(String value);
 
     /**
      * @return the String presentation of the value
