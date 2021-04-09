@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/witz/io-bridge.svg?branch=master)](https://travis-ci.org/witz/io-bridge)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=witz_io-bridge&metric=alert_status)](https://sonarcloud.io/dashboard?id=witz_io-bridge)
+[![CircleCI](https://circleci.com/gh/witz/io-bridge.svg?style=shield)](https://circleci.com/gh/witz/io-bridge)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=net.witz.libs%3Aio-bridge-parent&metric=alert_status)](https://sonarcloud.io/dashboard?id=net.witz.libs%3Aio-bridge-parent)
 
 # IO-Bridge
 
