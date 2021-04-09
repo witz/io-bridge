@@ -9,11 +9,13 @@
 	<name>IO Bridge Parent project</name>
 
 	<properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
 		<license.licenseName>mit</license.licenseName>
 		<license.licenseResolver>file://${maven.multiModuleProjectDirectory}/license</license.licenseResolver>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<sonar.organization>witz</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<organization>
