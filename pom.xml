@@ -16,6 +16,7 @@
     <license.licenseResolver>file://${maven.multiModuleProjectDirectory}/license</license.licenseResolver>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.projectKey>io-bridge</sonar.projectKey>
+    <sonar.projectName>io-bridge</sonar.projectName>
     <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
     <sonar.organization>witz</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>

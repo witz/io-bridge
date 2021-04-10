@@ -38,7 +38,7 @@ public class AttributeTest {
     public void testAttributeSetValue() {
         String v = "10";
         attribute.setValue(v);
-        Assert.assertTrue(v.equals(attribute.getValue()));
+		Assert.assertEquals(v, attribute.getValue());
     }
 
     @Test(expected = InvalidAttributeException.class)
