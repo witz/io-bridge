@@ -1,5 +1,7 @@
 package io.bridge.random.properties;
 
+import java.security.SecureRandom;
+
 /*-
  * #%L
  * io-bridge Random
@@ -28,8 +30,6 @@ package io.bridge.random.properties;
 
 import java.util.Map;
 
-import org.apache.commons.lang3.RandomStringUtils;
-
 import io.bridge.api.Attribute;
 import io.bridge.random.RandomSource;
 import io.bridge.random.attributes.CountAttribute;
@@ -39,7 +39,7 @@ import io.bridge.random.attributes.CountAttribute;
  * @author Charaf-Eddine SAIDI
  *
  */
-public class RandomStringProperty extends AbstractRandomProperty {
+public class RandomStringProperty implements IRandomProperty {
 
     public static final String NAME = "string";
     private String value;
@@ -73,12 +73,33 @@ public class RandomStringProperty extends AbstractRandomProperty {
     @Override
     public void read(RandomSource source) {
         int count = Integer.parseInt(attributes.get(CountAttribute.NAME).getValue());
-        this.value = RandomStringUtils.randomAlphanumeric(count);
+		this.value = randomAlphanumeric(count);
     }
 
     @Override
     public void write(RandomSource source) {
         throw new UnsupportedOperationException();
     }
+
+	/*
+	 * Helper
+	 */
+
+	private String randomAlphanumeric(int count) {
+
+		if (count < 1) {
+			throw new IllegalArgumentException("Invalid String lenght");
+		}
+
+		String alphabet = "abcdefghijklmnopqrstuvwxyz";
+		String alphanumeric = alphabet + alphabet.toUpperCase() + "0123456789";
+		SecureRandom random = new SecureRandom();
+		StringBuilder sb = new StringBuilder(count);
+		for (int i = 0; i < count; i++) {
+			sb.append(alphanumeric.charAt(random.nextInt(alphanumeric.length())));
+		}
+
+		return sb.toString();
+	}
 
 }

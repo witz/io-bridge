@@ -34,10 +34,10 @@ import io.bridge.random.RandomSource;
  * @author Charaf-Eddine SAIDI
  *
  */
-public abstract class AbstractRandomProperty implements IOProperty {
+public interface IRandomProperty extends IOProperty {
 
-    public abstract void read(RandomSource source);
+	void read(RandomSource source);
 
-    public abstract void write(RandomSource source);
+	void write(RandomSource source);
 
 }

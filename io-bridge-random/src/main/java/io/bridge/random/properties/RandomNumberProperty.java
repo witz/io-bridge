@@ -28,21 +28,25 @@ package io.bridge.random.properties;
 
 import java.util.Map;
 
-import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.rng.UniformRandomProvider;
 
 import io.bridge.api.Attribute;
 import io.bridge.random.RandomSource;
 import io.bridge.random.attributes.EndExclusive;
-import io.bridge.random.attributes.StartInclusive;
 
-public class RandomNumberProperty extends AbstractRandomProperty {
+/**
+ *
+ * @author Charaf-Eddine SAIDI
+ *
+ */
+public class RandomNumberProperty implements IRandomProperty {
 
     public static final String NAME = "number";
-    private int value;
+	private long value;
     private final Map<String, Attribute> attributes;
 
     public RandomNumberProperty() {
-        this.attributes = Map.of(StartInclusive.NAME, new StartInclusive(), EndExclusive.NAME, new EndExclusive());
+		this.attributes = Map.of(EndExclusive.NAME, new EndExclusive());
     }
 
     @Override
@@ -57,19 +61,20 @@ public class RandomNumberProperty extends AbstractRandomProperty {
 
     @Override
     public void setValue(String value) {
-        this.value = Integer.parseInt(value);
+		this.value = Long.parseLong(value);
     }
 
     @Override
     public String getValue() {
-        return Integer.toString(value);
+		return Long.toString(value);
     }
 
     @Override
     public void read(RandomSource source) {
-        int startInclusive = Integer.parseInt(getAttributes().get(StartInclusive.NAME).getValue());
         int endExclusive = Integer.parseInt(getAttributes().get(EndExclusive.NAME).getValue());
-        value = RandomUtils.nextInt(startInclusive, endExclusive);
+		UniformRandomProvider rng = org.apache.commons.rng.simple.RandomSource
+				.create(org.apache.commons.rng.simple.RandomSource.MT);
+		value = rng.nextLong(endExclusive);
     }
 
     @Override

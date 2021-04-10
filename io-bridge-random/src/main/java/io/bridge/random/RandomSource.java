@@ -34,7 +34,7 @@ import java.util.Set;
 import io.bridge.api.Attribute;
 import io.bridge.api.IOProperty;
 import io.bridge.api.IOSource;
-import io.bridge.random.properties.AbstractRandomProperty;
+import io.bridge.random.properties.IRandomProperty;
 import io.bridge.random.properties.RandomNumberProperty;
 import io.bridge.random.properties.RandomStringProperty;
 
@@ -82,15 +82,15 @@ public class RandomSource implements IOSource {
 
     @Override
     public void read(IOProperty property) {
-        if (property instanceof AbstractRandomProperty) {
-            ((AbstractRandomProperty) property).read(this);
+        if (property instanceof IRandomProperty) {
+            ((IRandomProperty) property).read(this);
         }
     }
 
     @Override
     public void write(IOProperty property) {
-        if (property instanceof AbstractRandomProperty) {
-            ((AbstractRandomProperty) property).write(this);
+        if (property instanceof IRandomProperty) {
+            ((IRandomProperty) property).write(this);
         }
     }
 
