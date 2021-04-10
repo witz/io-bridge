@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import io.bridge.random.attributes.EndExclusive;
 import io.bridge.random.properties.RandomNumberProperty;
 
 /**
@@ -47,6 +48,7 @@ public class RandomSourceTest {
 
 	@Test
 	public void testRead() {
+		property.getAttributes().get(EndExclusive.NAME).setValue("1000");
 		source.read(property);
 		assertNotNull(property.getValue());
 	}
