@@ -1,5 +1,4 @@
 [![CircleCI](https://circleci.com/gh/witz/io-bridge.svg?style=shield)](https://circleci.com/gh/witz/io-bridge)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=net.witz.libs%3Aio-bridge-parent&metric=alert_status)](https://sonarcloud.io/dashboard?id=net.witz.libs%3Aio-bridge-parent)
 
 # IO-Bridge
 
